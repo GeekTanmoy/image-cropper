@@ -41,6 +41,9 @@ android {
             withJavadocJar()
         }
     }
+
+    group = "com.github.GeekTanmoy"
+    version = "1.0.0"
 }
 
 dependencies {
