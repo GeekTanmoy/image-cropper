@@ -47,5 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //implementation(project(":image-cropper"))
-    implementation("com.geektanmoy:image-cropper:1.0.0")
+    implementation("com.github.geektanmoy:image-cropper:0.0.1")
 }
