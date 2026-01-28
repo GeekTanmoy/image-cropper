@@ -60,9 +60,9 @@ publishing {
         register<MavenPublication>("release"){
             afterEvaluate {
                 from(components["release"])
-                groupId = "com.geektanmoy"
+                groupId = "com.github.geektanmoy"
                 artifactId = "image-cropper"
-                version = "1.0.0"
+                version = "0.0.1"
             }
         }
     }
