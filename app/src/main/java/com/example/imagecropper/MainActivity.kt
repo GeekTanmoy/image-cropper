@@ -1,14 +1,11 @@
 package com.example.imagecropper
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.imagecropper.databinding.ActivityMainBinding
-import com.geektanmoy.imagecropper.CropActivity
-import com.geektanmoy.imagecropper.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnOpenCamera.setOnClickListener {
-            startActivity(Intent(this, CropActivity::class.java))
+            ///startActivity(Intent(this, CropActivity::class.java))
         }
     }
 }
