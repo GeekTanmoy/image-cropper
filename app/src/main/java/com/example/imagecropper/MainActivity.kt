@@ -2,7 +2,9 @@ package com.example.imagecropper
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.imagecropper.databinding.ActivityMainBinding
@@ -25,7 +27,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnOpenCamera.setOnClickListener {
-            ///startActivity(Intent(this, CropActivity::class.java))
+            //imageLauncher.launch(Intent(this, CropActivity::class.java))
         }
     }
+
+    private val imageLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val imageUri = result.data?.getStringExtra("imageUri")
+                if (imageUri != null) {
+                    binding.ivImage.setImageURI(imageUri.toUri())
+                }
+            }
+        }
 }

@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.navigationSafeArgs)
 
     id("maven-publish") //For Maven Publish (Optional)
 }
@@ -52,6 +53,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Navigation
+    implementation(libs.navigationFragment)
+    implementation(libs.navigationUi)
+
+    //Exifinterface
+    implementation(libs.exifinterface)
 }
 
 //Maven Local Script
@@ -62,7 +70,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.GeekTanmoy"
                 artifactId = "image-cropper"
-                version = "0.0.1"
+                version = "1.0.0"
             }
         }
     }
