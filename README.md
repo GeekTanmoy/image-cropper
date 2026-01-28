@@ -1,0 +1,32 @@
+# Image Cropper Library
+
+This is ***Image Cropper Library*** which provide functionalities like to Capture, Crop & Preview Image.
+
+## Functionalities
+  - Capture Image using Default Camera App.
+  - Free Flow Cropping of Captured Image.
+  - Preview the Cropped Image.
+  - Return Image Uri to the source.
+
+## Module Integration
+**1. Add it in your root settings.gradle at the end of repositories:**
+
+    dependencyResolutionManagement {
+		  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		  repositories {
+			  mavenCentral()
+        
+			  maven { url 'https://jitpack.io' } //Add this line
+		  }
+	  }
+
+  **2. Add the dependency:**
+
+    dependencies {
+	        implementation 'com.github.GeekTanmoy:image-cropper:Tag'
+	  }
+
+  For ***Tag***, please check the Latest Release.
+
+Now use these functionalities.
+***Happy Coding***
