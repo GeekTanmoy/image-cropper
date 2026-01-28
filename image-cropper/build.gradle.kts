@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
@@ -41,9 +41,6 @@ android {
             withJavadocJar()
         }
     }
-
-    group = "com.github.GeekTanmoy"
-    version = "1.0.0"
 }
 
 dependencies {
@@ -63,7 +60,7 @@ publishing {
         register<MavenPublication>("release"){
             afterEvaluate {
                 from(components["release"])
-                groupId = "com.github.geektanmoy"
+                groupId = "com.github.GeekTanmoy"
                 artifactId = "image-cropper"
                 version = "0.0.1"
             }
