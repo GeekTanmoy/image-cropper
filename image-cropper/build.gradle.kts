@@ -64,6 +64,7 @@ dependencies {
 }
 
 //Maven Local Script
+/*
 publishing {
     publications{
         register<MavenPublication>("release"){
@@ -75,4 +76,4 @@ publishing {
             }
         }
     }
-}
+}*/
