@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigationSafeArgs)
 
-    id("maven-publish") //For Maven Publish (Optional)
+    //id("maven-publish") //For Maven Publish (Optional)
 }
 
 android {
