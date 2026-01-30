@@ -1,7 +1,6 @@
 package com.example.imagecropper
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
@@ -12,10 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.imagecropper.databinding.ActivityMainBinding
 import com.example.imagecropper.databinding.LayoutCameraGalleryDialogBinding
-import com.geektanmoy.imagecropper.utils.AppUtils
-import com.geektanmoy.imagecropper.CropActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,19 +49,19 @@ class MainActivity : AppCompatActivity() {
             cameraGalleryDialog.dismiss()
 
             //Camera
-            cameraLauncher.launch(Intent(this, CropActivity::class.java).also { intent ->
+            /*cameraLauncher.launch(Intent(this, CropActivity::class.java).also { intent ->
                 intent.putExtra("ACTION", "C")
-            })
+            })*/
         }
 
         cameraGalleryBinding.ivGallery.setOnClickListener {
             cameraGalleryDialog.dismiss()
 
             //Gallery
-            galleryLauncher.launch(Intent(this, CropActivity::class.java).also { intent ->
+            /*galleryLauncher.launch(Intent(this, CropActivity::class.java).also { intent ->
                 intent.putExtra("ACTION", "G")
                 intent.putExtra("MIME", "IP")
-            })
+            })*/
         }
 
         cameraGalleryDialog.show()
@@ -86,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) {
                 val imageUri = result.data?.getStringExtra("imageUri")
                 if (imageUri != null) {
-                    val file: File = AppUtils.fileFromContentUri(this, imageUri.toUri())
+                    /*val file: File = AppUtils.fileFromContentUri(this, imageUri.toUri())
                     AppUtils.loge("File : $file")
                     AppUtils.loge("File Mime Type : ${AppUtils.getMimeType(file.extension)}")
                     AppUtils.loge("File Size : ${file.length()}Bytes")
@@ -98,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         binding.tvTitle.text = file.name
                         binding.ivImage.setImageURI(imageUri.toUri())
-                    }
+                    }*/
                 }
             }
         }
