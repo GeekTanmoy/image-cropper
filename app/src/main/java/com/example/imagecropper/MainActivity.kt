@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.imagecropper.databinding.ActivityMainBinding
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         cameraGalleryDialog.show()
     }
 
-    private val cameraLauncher =
+    /*private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val imageUri = result.data?.getStringExtra("imageUri")
@@ -75,14 +73,14 @@ class MainActivity : AppCompatActivity() {
                     binding.ivImage.setImageURI(imageUri.toUri())
                 }
             }
-        }
+        }*/
 
-    private val galleryLauncher =
+    /*private val galleryLauncher1 =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val imageUri = result.data?.getStringExtra("imageUri")
                 if (imageUri != null) {
-                    /*val file: File = AppUtils.fileFromContentUri(this, imageUri.toUri())
+                    *//*val file: File = AppUtils.fileFromContentUri(this, imageUri.toUri())
                     AppUtils.loge("File : $file")
                     AppUtils.loge("File Mime Type : ${AppUtils.getMimeType(file.extension)}")
                     AppUtils.loge("File Size : ${file.length()}Bytes")
@@ -94,8 +92,8 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         binding.tvTitle.text = file.name
                         binding.ivImage.setImageURI(imageUri.toUri())
-                    }*/
+                    }*//*
                 }
             }
-        }
+        }*/
 }
