@@ -23,10 +23,39 @@ This is ***Image Cropper Library*** which provide functionalities like to Captur
   **2. Add the dependency:**
 
     dependencies {
-	        implementation 'com.github.GeekTanmoy:image-cropper:Tag'
-	  }
+	    implementation 'com.github.GeekTanmoy:image-cropper:Tag'
+	}
 
   For ***Tag***, please check the Latest Release.
 
-Now use these functionalities.
+  ## Implementation
+  In your Activity or Fragment call the SDK.
+
+  ### In your Activity
+
+  	Intent(this, CropActivity::class.java).also { intent ->
+        intent.putExtra("ACTION", "C") //For Camera
+		intent.putExtra("ACTION", "C") //For Gallery
+		fileLauncher.launch(intent)
+    }
+
+ ### In your Fragment
+
+ 	Intent(requireContext(), CropActivity::class.java).also { intent ->
+        intent.putExtra("ACTION", "C") //For Camera
+		intent.putExtra("ACTION", "C") //For Gallery
+		fileLauncher.launch(intent)
+    }
+
+### Result 
+
+	private val fileLauncher =
+    	registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val imageUri = result.data?.getStringExtra("imageUri")
+            	//Use this imageUri as required
+            }
+    }
+
+
 ***Happy Coding***
