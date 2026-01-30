@@ -47,5 +47,5 @@ dependencies {
 
     implementation(project(":image-cropper"))
     //implementation("com.github.GeekTanmoy:image-cropper:1.0.0")
-    //implementation("com.github.GeekTanmoy:image-cropper:0.0.7")
+    //implementation("com.github.GeekTanmoy:image-cropper:1.0.7")
 }
