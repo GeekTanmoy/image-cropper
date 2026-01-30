@@ -9,7 +9,7 @@ material = "1.8.0"
 activity = "1.9.2"
 fragment = "1.6.2"
 constraintlayout = "2.1.4"
-navigation = "2.9.6"
+navigation = "2.9.7"
 exifinterface="1.4.2"
 kotlin = "2.2.0"
 
