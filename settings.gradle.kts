@@ -1,7 +1,7 @@
 pluginManagement {
     repositories {
         //Maven Local
-        //mavenLocal()
+        mavenLocal()
 
         google {
             content {
@@ -20,7 +20,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         //Maven Local
-        //mavenLocal()
+        mavenLocal()
 
         google()
         mavenCentral()
