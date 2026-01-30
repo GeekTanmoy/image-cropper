@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.fragment.NavHostFragment
 import com.geektanmoy.imagecropper.databinding.ActivityCropBinding
 import com.geektanmoy.imagecropper.utils.AppUtils
 
@@ -25,6 +26,13 @@ class CropActivity : AppCompatActivity() {
             insets
         }
 
-        AppUtils.logFlag = true
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.main_nav_host)
+                    as NavHostFragment
+
+        val navController = navHostFragment.navController
+        navController.setGraph(R.navigation.main_nav_graph)
+
+        AppUtils.logFlag = false
     }
 }
