@@ -3,15 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/photoFragment">
+    app:startDestination="@id/selectFragment">
 
     <fragment
-        android:id="@+id/photoFragment"
-        android:name="com.geektanmoy.imagecropper.fragments.PhotoFragment"
-        android:label="PhotoFragment">
+        android:id="@+id/selectFragment"
+        android:name="com.geektanmoy.imagecropper.fragments.SelectFragment"
+        android:label="SelectFragment">
         <action
-            android:id="@+id/action_photoFragment_to_cropFragment"
-            app:destination="@id/cropFragment" />
+            android:id="@+id/action_selectFragment_to_previewFragment"
+            app:destination="@id/previewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.geektanmoy.imagecropper.fragments.PreviewFragment"
+        android:label="PreviewFragment"
+        tools:layout="@layout/fragment_preview">
+        <action
+            android:id="@+id/action_previewFragment_to_cropFragment"
+            app:destination="@id/cropFragment"
+            app:popUpTo="@id/previewFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="imageUri"
+            app:argType="string" />
+        <argument
+            android:name="action"
+            app:argType="string" />
+        <argument
+            android:name="cropFlag"
+            app:argType="boolean" />
+        <argument
+            android:name="cropUri"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
     <fragment
@@ -20,25 +45,15 @@
         android:label="CropFragment"
         tools:layout="@layout/fragment_crop">
         <action
-            android:id="@+id/action_cropFragment_to_cropViewFragment"
-            app:destination="@id/cropViewFragment"
+            android:id="@+id/action_cropFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
             app:popUpTo="@id/cropFragment"
             app:popUpToInclusive="true" />
         <argument
             android:name="imageUri"
             app:argType="string" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/cropViewFragment"
-        android:name="com.geektanmoy.imagecropper.fragments.CropViewFragment"
-        android:label="CropViewFragment"
-        tools:layout="@layout/fragment_crop_view">
         <argument
-            android:name="imageUri"
-            app:argType="string" />
-        <argument
-            android:name="cropUri"
+            android:name="action"
             app:argType="string" />
     </fragment>
 

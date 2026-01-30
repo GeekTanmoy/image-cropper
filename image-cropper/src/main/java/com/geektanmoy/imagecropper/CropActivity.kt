@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.geektanmoy.imagecropper.databinding.ActivityCropBinding
+import com.geektanmoy.imagecropper.utils.AppUtils
 
 class CropActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class CropActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding= ActivityCropBinding.inflate(layoutInflater)
+        binding = ActivityCropBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -23,5 +24,7 @@ class CropActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        AppUtils.logFlag = true
     }
 }

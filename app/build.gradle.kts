@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.example.imagecropper"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.imagecropper"
@@ -28,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
@@ -46,7 +45,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //implementation(project(":image-cropper"))
+    implementation(project(":image-cropper"))
     //implementation("com.github.GeekTanmoy:image-cropper:1.0.0")
-    //implementation("com.github.GeekTanmoy:image-cropper:0.0.5")
+    //implementation("com.github.GeekTanmoy:image-cropper:0.0.7")
 }

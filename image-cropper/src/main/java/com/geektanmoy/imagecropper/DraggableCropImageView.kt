@@ -51,10 +51,11 @@ class DraggableCropImageView(context: Context, attrs: AttributeSet?) :
     private var lastY = 0f
 
     fun setImageBitmapForCrop(bmp: Bitmap) {
-        bitmap = bmp
-        setImageBitmap(bitmap)
-        rect = RectF(100f, 100f, 400f, 400f)
-        invalidate()
+            bitmap = bmp
+            setImageBitmap(bitmap)
+
+            rect = RectF(100f, 100f, 400f, 400f)
+            invalidate()
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -148,22 +149,6 @@ class DraggableCropImageView(context: Context, attrs: AttributeSet?) :
             if (rect.bottom > height) rect.offset(0f, height - rect.bottom)
         }
     }
-
-    /*fun cropSelected(): Uri? {
-        bitmap?.let { bmp ->
-            val scaleX = bmp.width.toFloat() / width
-            val scaleY = bmp.height.toFloat() / height
-            val left = (rect.left * scaleX).toInt().coerceIn(0, bmp.width)
-            val top = (rect.top * scaleY).toInt().coerceIn(0, bmp.height)
-            val right = (rect.right * scaleX).toInt().coerceIn(0, bmp.width)
-            val bottom = (rect.bottom * scaleY).toInt().coerceIn(0, bmp.height)
-
-            val createBitmap = Bitmap.createBitmap(bmp, left, top, right - left, bottom - top)
-
-            return getImageUri(createBitmap)
-        }
-        return null
-    }*/
 
     fun cropSelected(): Uri? {
         bitmap?.let { bmp ->
