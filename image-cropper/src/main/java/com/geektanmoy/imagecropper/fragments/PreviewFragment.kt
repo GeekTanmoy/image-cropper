@@ -69,7 +69,7 @@ class PreviewFragment : Fragment() {
         }
 
         args.imageUri.let { uriString ->
-            imageUri = uriString.toUri()
+            //imageUri = uriString.toUri()
             imageUri?.let { uri ->
                 val imageFile: File = AppUtils.fileFromContentUri(requireContext(), uri)
                 AppUtils.loge("Image File : $imageFile")
@@ -188,9 +188,9 @@ class PreviewFragment : Fragment() {
                             }
                         }
                     } else {
-                        imageUri?.let {
+                        uri.let {newUri->
                             Intent().also { intent ->
-                                intent.putExtra("imageUri", it.toString())
+                                intent.putExtra("imageUri", newUri.toString())
                                 requireActivity().setResult(Activity.RESULT_OK, intent)
                                 requireActivity().finish()
                             }

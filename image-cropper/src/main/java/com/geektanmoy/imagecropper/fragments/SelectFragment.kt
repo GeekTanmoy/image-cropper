@@ -167,7 +167,7 @@ class SelectFragment : Fragment() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 if (result.data != null) {
-                    val uri = result.data?.data
+                    val uri: Uri? = result.data?.data
                     AppUtils.loge("Uri : $uri")
                     if (uri != null) {
                         val file: File = AppUtils.fileFromContentUri(requireContext(), uri)
