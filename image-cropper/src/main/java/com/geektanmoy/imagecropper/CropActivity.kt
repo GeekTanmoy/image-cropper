@@ -33,6 +33,6 @@ class CropActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         navController.setGraph(R.navigation.main_nav_graph)
 
-        AppUtils.logFlag = true
+        AppUtils.logFlag = false
     }
 }

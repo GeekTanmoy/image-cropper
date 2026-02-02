@@ -79,8 +79,8 @@ class CropFragment : Fragment() {
         }
 
         binding.btnCrop.setOnClickListener {
-            val cropImage = binding.ivImage.cropSelected()
-            cropImage?.let { cropUri ->
+            val cropImageUri = binding.ivImage.cropSelected()
+            cropImageUri?.let { cropUri ->
                 findNavController().navigate(
                     CropFragmentDirections.actionCropFragmentToPreviewFragment(
                         imageUri.toString(),
