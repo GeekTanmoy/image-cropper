@@ -66,11 +66,14 @@ class SelectFragment : Fragment() {
     private fun getPermission(action: String): Array<String> {
         val permissionsList = ArrayList<String>()
         if (action == "C") {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                permissionsList.add(Manifest.permission.CAMERA)
-            } else {
             permissionsList.add(Manifest.permission.CAMERA)
-            permissionsList.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                permissionsList.add(Manifest.permission.READ_MEDIA_IMAGES)
+                permissionsList.add(Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                permissionsList.add(Manifest.permission.READ_MEDIA_IMAGES)
+            } else {
+                permissionsList.add(Manifest.permission.READ_EXTERNAL_STORAGE)
             }
         } else if (action == "G") {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
