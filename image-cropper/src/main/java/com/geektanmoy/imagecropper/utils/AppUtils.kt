@@ -111,7 +111,7 @@ object AppUtils {
         val matrix = Matrix()
         matrix.postRotate(degree)
         val rotatedImg = Bitmap.createBitmap(img, 0, 0, img.width, img.height, matrix, true)
-        img.recycle()
+        //img.recycle()
         return rotatedImg
     }
 }
