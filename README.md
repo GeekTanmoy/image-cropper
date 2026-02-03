@@ -35,7 +35,8 @@ This is ***Image Cropper Library*** which provide functionalities like to Captur
 
   	Intent(this, CropActivity::class.java).also { intent ->
         intent.putExtra("ACTION", "C") //For Camera
-		intent.putExtra("ACTION", "C") //For Gallery
+		intent.putExtra("ACTION", "G") //For Gallery
+		intent.putExtra("MIME", "IP") //For Image and PDF (Gallery Only)
 		fileLauncher.launch(intent)
     }
 
@@ -43,7 +44,8 @@ This is ***Image Cropper Library*** which provide functionalities like to Captur
 
  	Intent(requireContext(), CropActivity::class.java).also { intent ->
         intent.putExtra("ACTION", "C") //For Camera
-		intent.putExtra("ACTION", "C") //For Gallery
+		intent.putExtra("ACTION", "G") //For Gallery
+		intent.putExtra("MIME", "IP") //For Image and PDF (Gallery Only)
 		fileLauncher.launch(intent)
     }
 
